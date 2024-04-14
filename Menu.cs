@@ -12,9 +12,13 @@ namespace LINQ_Labb1
     {
         public static void StartMenu()
         {
+            Console.ForegroundColor = ConsoleColor.Green;
+            Console.WriteLine("Welcome to my school program!\n");
+
             while (true)
             {
-                Console.WriteLine("Welcome to my school program!");
+                Console.ForegroundColor = ConsoleColor.Yellow;
+                Console.WriteLine("Main Menu:");
                 Console.WriteLine("1. Get all teachers who teach mathematics");
                 Console.WriteLine("2. Get all students with their teachers");
                 Console.WriteLine("3. Check if the subjects table contains Programming1");
@@ -22,8 +26,10 @@ namespace LINQ_Labb1
                 Console.WriteLine("5. Update a student's teacher from Anas to Reidar");
                 Console.WriteLine("6. Exit the program");
 
-                Console.Write("Choose between (1-6): ");
+                Console.Write("\nEnter your choice (1-6): ");
                 string choice = Console.ReadLine();
+
+                Console.Clear();
 
                 switch (choice)
                 {
@@ -43,16 +49,19 @@ namespace LINQ_Labb1
                         UpdateStudentTeacherFromAnasToReidar();
                         break;
                     case "6":
+                        Console.ForegroundColor = ConsoleColor.Red;
                         Console.WriteLine("Exiting the program.");
                         return;
                     default:
-                        Console.WriteLine("Invalid choice. Please choose again.");
+                        Console.ForegroundColor = ConsoleColor.Red;
+                        Console.WriteLine("Invalid choice. Please choose again.\n");
                         break;
                 }
 
-                Console.WriteLine("Press Enter to continue...");
-                Console.ReadLine();
-                Console.Clear();
+                Console.ForegroundColor = ConsoleColor.White;
+                Console.WriteLine("\nPress Enter to continue...");
+                Console.ReadLine(); // Wait for Enter key press
+                Console.Clear(); // Clear the console for the next iteration
             }
         }
 
